@@ -1,0 +1,27 @@
+<%- include('./partials/header') %>
+  <main class="w-full h-screen bg-zinc-100">
+    <%- include('./partials/navbar.ejs') %>
+      <div class="px-8 py-6">
+        <h2 class="text-lg font-semibold text-zinc-500">All Hisaab Kitaab</h2>
+        <div class="py-3 flex flex-col gap-2">
+          <% if(files.length > 0) {%>
+            <% files.forEach((file)=> { %>
+              <div
+                class="px-2 py-1 rounded bg-blue-500 text-white w-72 text-sm flex justify-between items-center font-semibold text-zinc-200">
+                <div class="flex items-center gap-2">
+                  <%= file.split('.')[0] %> <a class="text-lg font-semibold" href="/read/<%= file %>"><i
+                        class="ri-arrow-right-circle-fill text-blue-200"></i></a>
+                </div>
+                <div class="flex gap-2">
+                  <a href="/edit/<%= file %>"><i class="ri-pencil-line text-zinc-300"></i></a>
+                  <a href="/delete/<%= file %>"><i class="ri-delete-bin-2-line text-red-400"></i></a>
+                </div>
+              </div>
+              <% })%>
+            <%} else {%>
+              <p class="text-sm text-zinc-500 px-3 my-3">There are no hisaabs in your data.</p>
+              <% } %>
+        </div>
+      </div>
+  </main>
+  <%- include('./partials/footer') %>

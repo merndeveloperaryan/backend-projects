@@ -1,0 +1,12 @@
+<%- include('./partials/header.ejs') %> <%- include('./partials/navbar.ejs') %>
+        <div class="px-8 py-6">
+            <h2 class="text-lg font-semibold text-zinc-500 my-2">Create New Hisaab</h2>
+            <form action="/create-file" method="post" class="flex flex-col w-96 gap-2">
+                <div class="w-72 outline-none px-2 py-1 text-xs text-zinc-600 border-2 border-zinc-300 rounded-lg">Shopping ka Hisaab, ghar ka kharcha..</div>
+                <textarea
+                    class="w-full h-64 px-3 py-2 rounded-lg border-2 border-zinc-300 resize-none outline-none text-sm text-zinc-600"
+                    name="filedata" placeholder="Daal, aata etc."></textarea>
+                <input class="w-32 px-2 py-2 rounded-lg bg-blue-500 text-white text-sm text-center" type="submit" />
+            </form>
+        </div>
+        <%- include('./partials/footer.ejs') %>

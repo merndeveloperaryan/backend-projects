@@ -1,0 +1,11 @@
+<%- include('./partials/header.ejs') %> <%- include('./partials/navbar.ejs') %>
+        <div class="px-8 py-6">
+            <h2 class="text-lg font-semibold text-sm my-2">Hisaab of <span class="text-blue-800"><%= filename.split('.')[0] %></span> date</h2>
+            <form action="" class="flex flex-col w-96 gap-2">
+                <p
+                    class="w-full min-h-20 px-3 py-2 rounded-lg border-2 border-zinc-300 text-sm text-zinc-600"
+                    name="filedata"><%= data %></p>
+                <a href="/edit/<%= filename %>" class="w-28 p-0 text-blue-500 text-sm text-center">Update Hisaab</a>
+            </form>
+        </div>
+        <%- include('./partials/footer.ejs') %>
